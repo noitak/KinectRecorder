@@ -93,12 +93,12 @@ bool NuiRecorder::Record(const NUI_IMAGE_FRAME& imageFrame) {
 	return true;
 }
 
-NuiPlayper::NuiPlayper(void) :_stream(NULL), _archive(NULL) {
+NuiPlayer::NuiPlayer(void) :_stream(NULL), _archive(NULL) {
 }
-NuiPlayper::~NuiPlayper(void) {
+NuiPlayer::~NuiPlayer(void) {
 	Close();
 }
-bool NuiPlayper::Open(LPCTSTR filename) {
+bool NuiPlayer::Open(LPCTSTR filename) {
 	Close();
 	try {
 		_stream = new std::ifstream(filename);
@@ -108,7 +108,7 @@ bool NuiPlayper::Open(LPCTSTR filename) {
 	}
 	return true;
 }
-void NuiPlayper::Close() {
+void NuiPlayer::Close() {
 	if (_archive) {
 		delete _archive;
 		_archive = NULL;
@@ -119,7 +119,7 @@ void NuiPlayper::Close() {
 		_stream = NULL;
 	}
 }
-bool NuiPlayper::Record(NUI_IMAGE_FRAME& imageFrame) {
+bool NuiPlayer::Record(NUI_IMAGE_FRAME& imageFrame) {
 	if (!IsOpened()) { return false; }
 	try {
 		NuiImageFrameWrapper ifw;

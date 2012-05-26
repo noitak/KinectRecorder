@@ -182,15 +182,15 @@ public:
 
 /** Player for Microsoft Kinect SDK
  */
-class NuiPlayper
+class NuiPlayer
 {
 protected:
 	std::ifstream* _stream;
 	boost::archive::binary_iarchive* _archive;
 
 public:
-	NuiPlayper(void);
-	~NuiPlayper(void);
+	NuiPlayer(void);
+	~NuiPlayer(void);
 	bool Open(LPCTSTR filename);
 	void Close();
 	bool Record(NUI_IMAGE_FRAME& imageFrame);
