@@ -174,7 +174,7 @@ protected:
 public:
 	NuiRecorder(void);
 	~NuiRecorder(void);
-	bool Open(LPCTSTR filename);
+	bool Open(const char* filename);
 	void Close();
 	bool Record(const NUI_IMAGE_FRAME& imageFrame);
 	bool IsOpened() { return (_stream && _archive); }
@@ -191,7 +191,7 @@ protected:
 public:
 	NuiPlayer(void);
 	~NuiPlayer(void);
-	bool Open(LPCTSTR filename);
+	bool Open(const char* filename);
 	void Close();
 	bool Record(NUI_IMAGE_FRAME& imageFrame);
 	bool IsOpened() { return (_stream && _archive); }

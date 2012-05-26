@@ -58,7 +58,7 @@ NuiRecorder::~NuiRecorder(void) {
 	Close();
 }
 
-bool NuiRecorder::Open( LPCTSTR filename )
+bool NuiRecorder::Open(const char* filename)
 {
 	Close();
 	try {
@@ -98,7 +98,7 @@ NuiPlayer::NuiPlayer(void) :_stream(NULL), _archive(NULL) {
 NuiPlayer::~NuiPlayer(void) {
 	Close();
 }
-bool NuiPlayer::Open(LPCTSTR filename) {
+bool NuiPlayer::Open(const char* filename) {
 	Close();
 	try {
 		_stream = new std::ifstream(filename);
